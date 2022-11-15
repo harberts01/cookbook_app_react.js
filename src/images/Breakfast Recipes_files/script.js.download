@@ -1,0 +1,42 @@
+let id = 0;
+
+document.getElementById('add').addEventListener('click', () => {
+    let table = document.getElementById('list');
+    let row = table.insertRow(1);
+    row.setAttribute('id', `item-${id}`);
+    row.insertCell(0).innerHTML = document.getElementById('storedName').value;
+    document.getElementById('storedName').value.replace('undefined', '');
+    row.insertCell(1).innerHTML = document.getElementById('num-of-ingredients').value; 
+    row.insertCell(2).innerHTML = document.getElementById('prep-time').value; 
+    row.insertCell(3).innerHTML = document.getElementById('servings').value; 
+    let openRecipe = row.insertCell(4);
+    openRecipe.appendChild(createOpenButton(id++));
+    document.getElementById('storedName').value = '';
+});
+
+function createOpenButton(id){
+    let btn = document.createElement('button');
+    btn.className = 'btn btn-primary'
+    btn.id= id;
+    btn.innerHTML = 'Open';
+    btn.onclick =()=>{
+        $("#staticBackdrop").modal('show'); 
+    };
+    return btn;
+}
+
+document.getElementById("staticBackdropLabel") = output;
+
+function test(){
+    let storedName = document.getElementById("storedName").value;
+    let name = localStorage.setItem("storedName", storedName);
+}
+
+   
+var output = document.getElementById("storedName");
+    for (let i = 0, len = localStorage.length; i < len; ++i) {
+        let element = document.createElement("p")
+        element.textContent = localStorage.getItem(localStorage.key(i))
+        output.appendChild(element)
+    }
+    
