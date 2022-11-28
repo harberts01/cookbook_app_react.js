@@ -19,7 +19,7 @@ const sendDataToAPI = () => {
         <Form.Control type="name" placeholder="Cookbook Name" onChange={(e) => setCookbookName(e.target.value)} />
       </Form.Group>
 
-      <Link to = '/OpenCookbook'>
+      <Link to = '/ShowCookbooks'>
         <Button variant="success" type="submit" className='mt-3' onClick={sendDataToAPI} >
             Submit
         </Button>

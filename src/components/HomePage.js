@@ -24,7 +24,7 @@ export const HomePage = () => {
                     <Link style={{textDecoration: 'none'}} to='/CreateCookbook'>
                         <CreateNewBtn />
                     </Link>
-                    <Link style={{textDecoration: 'none'}} to='/OpenCookbook'>
+                    <Link style={{textDecoration: 'none'}} to='/ShowCookbooks'>
                         <ShowBooksBtn />
                     </Link>    
                 </Col>
